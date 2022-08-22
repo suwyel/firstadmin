@@ -17,7 +17,7 @@
                  <table class="table table-bordered" id="data-table">
 					<thead>
 						<tr>
-							<th>{{ _lang('App Logo') }}</th>
+							<th >{{ _lang('App Logo') }} </th>
         					<th>{{ _lang('App') }}</th>
                             <th>{{ _lang('Status') }}</th>
 							<th class="text-center">{{ _lang('Action') }}</th>

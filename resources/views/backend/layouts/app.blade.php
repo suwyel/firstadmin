@@ -45,9 +45,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
         integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="{{ asset('public/backend/css/custom.css') }}" />
     <!-- FAVICON -->
     <link href="{{ asset('public/backend/images/favicon.png') }}" rel="shortcut icon" />
+
+    <link id="main-css-href" rel="stylesheet" href="{{ asset('public/backend/css/custom.css') }}" />
+
 
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 
@@ -90,10 +92,10 @@
                     <!-- sidebar menu -->
                     <ul class="nav sidebar-inner" id="sidebar-menu">
                         <li class="has-sub">
-                            <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse"
+                            <a class="sidenav-item-link " href="javascript:void(0)" data-toggle="collapse"
                                 data-target="#email" aria-expanded="false" aria-controls="email">
                                 <i class="mdi mdi-account"></i>
-                                <span class="nav-text">User Name</span>
+                                <span class="nav-text">User Name</span> <b class="caret"></b>
                             </a>
                             <ul class="collapse" id="email" data-parent="#sidebar-menu">
                                 <div class="sub-menu">
@@ -119,14 +121,12 @@
                             </ul>
                         </li>
 
-                        <li class="">
-                            <a class="sidenav-item-link" href="index.html">
+                        <li class="{{ (request()->segment(1) == 'live_matches') ? 'active' : '' }}">
+                            <a class="sidenav-item-link" href="{{ route('live_matches.index') }}">
                                 <span class="icon"><i class="fas fa-file-video"></i></span>
                                 <span class="nav-text">Live Control</span>
                             </a>
                         </li>
-
-
 
                         <li>
                             <a class="sidenav-item-link" href="contacts.html">
@@ -142,8 +142,8 @@
                             </a>
                         </li>
 
-                        <li>
-                            <a class="sidenav-item-link" href="{{ route('apps.index') }}">
+                        <li class="{{ (request()->segment(1) == 'apps') ? 'active' : '' }}">
+                            <a class="sidenav-item-link  " href="{{ route('apps.index') }}">
                                 <span class="icon"> <i class="fab fa-app-store-ios"></i></span>
                                 <span class="nav-text">Apps</span>
                             </a>
@@ -463,7 +463,7 @@
     <script src="{{ asset('public/backend/plugins/jvectormap/jquery-jvectormap-2.0.3.min.js') }}"></script>
     <script src="{{ asset('public/backend/plugins/jvectormap/jquery-jvectormap-world-mill.js') }}"></script>
     <script src="{{ asset('public/backend/plugins/jvectormap/jquery-jvectormap-us-aea.js') }}"></script>
-<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 
     <script src="{{ asset('public/backend/plugins/daterangepicker/moment.min.js') }}"></script>
@@ -543,13 +543,12 @@
             })
         @endif
         @foreach ($errors->all() as $error)
-           Toast.fire({
+            Toast.fire({
                 icon: 'error',
                 title: '{{ session('error') }}',
                 background: '#F8F9FA',
             })
         @endforeach
-
     </script>
 
 

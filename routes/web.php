@@ -30,10 +30,8 @@ Route::middleware(['install'])->group(function () {
 
 
 
-
-
-
         Route::resource('apps', 'App\Http\Controllers\AppController');
+        Route::resource('live_matches', 'App\Http\Controllers\LiveMatchController');
     });
 });
 

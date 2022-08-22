@@ -136,10 +136,22 @@
                         </div>
 
 						<div class="col-md-12">
-							<div class="form-group">
-								<button type="reset" class="btn btn-danger btn-sm">{{ _lang('Reset') }}</button>
-								<button type="submit" class="btn btn-primary btn-sm">{{ _lang('Save') }}</button>
-							</div>
+						<div class="form-group">
+
+                                        <button class="ladda-button btn btn-danger btn-ladda mb-1" type="reset"
+                                            data-style="expand-right">
+                                            <span class="ladda-label">{{ _lang('Reset') }}!</span>
+                                            <span class="ladda-spinner"></span>
+                                            <div class="ladda-progress" style="width: 0px;"></div>
+                                        </button>
+                                        <button class="ladda-button btn btn-primary btn-ladda mb-1"
+                                            data-style="expand-right">
+                                            <span class="ladda-label">{{ _lang('Save') }}!</span>
+                                            <span class="ladda-spinner"></span>
+                                            <div class="ladda-progress" style="width: 0px;"></div>
+                                        </button>
+
+                                    </div>
 						</div>
 					</div>
 				</form>

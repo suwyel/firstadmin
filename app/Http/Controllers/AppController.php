@@ -33,7 +33,7 @@ class AppController extends Controller
 
                 ->editColumn('app_logo', function ($app) {
 
-                    return '<img class="img-sm img-thumbnail" src="' . asset($app->app_logo) . '">';
+                    return '<img class="img-sm img-thumbnail" width= 50px; height=50px src="' . asset($app->app_logo) . '"> ' ;
                 })
                 ->addColumn('_app', function ($app) {
 
@@ -144,7 +144,7 @@ class AppController extends Controller
             $file = $request->file('app_logo');
             $file_name = time() . '.' . $file->getClientOriginalExtension();
             $file->move(base_path('public/uploads/images/'), $file_name);
-            $app->app_logo = 'uploads/images/' . $file_name;
+            $app->app_logo = 'public/uploads/images/' . $file_name;
         }
 
         $app->save();

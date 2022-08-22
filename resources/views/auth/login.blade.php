@@ -1,77 +1,3 @@
-{{-- @extends('layouts.app')
-
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
-
-                <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
-                        @csrf
-
-                        <div class="row mb-3">
-                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <div class="col-md-6 offset-md-4">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
-                                    <label class="form-check-label" for="remember">
-                                        {{ __('Remember Me') }}
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row mb-0">
-                            <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Login') }}
-                                </button>
-
-                                @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
-                                    </a>
-                                @endif
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-@endsection --}}
-
 
 <!DOCTYPE html> 
 
@@ -95,21 +21,21 @@
 
         <!-- GOOGLE FONTS -->
         <link href="https://fonts.googleapis.com/css?family=Karla:400,700|Roboto" rel="stylesheet">
-        <link href="{{ asset('backend/plugins/material/css/materialdesignicons.min.css') }}" rel="stylesheet" />
-        <link href="{{ asset('backend/plugins/simplebar/simplebar.css" rel="stylesheet') }}" />
+        <link href="{{ asset('public/backend//plugins/material/css/materialdesignicons.min.css') }}" rel="stylesheet" />
+        <link href="{{ asset('public/backend//plugins/simplebar/simplebar.css" rel="stylesheet') }}" />
 
         <!-- PLUGINS CSS STYLE -->
-        <link href="{{ asset('backend/plugins/nprogress/nprogress.css') }}" rel="stylesheet" />
+        <link href="{{ asset('public/backend//plugins/nprogress/nprogress.css') }}" rel="stylesheet" />
 
         <!-- MONO CSS -->
-        <link id="main-css-href" rel="stylesheet" href="{{ asset('backend/css/style.css') }}" />
-        <link id="main-css-href" rel="stylesheet" href="{{ asset('backend/css/custom.css') }}" />
+        <link id="main-css-href" rel="stylesheet" href="{{ asset('public/backend//css/style.css') }}" />
+        <link id="main-css-href" rel="stylesheet" href="{{ asset('public/backend//css/custom.css') }}" />
 
 
 
 
         <!-- FAVICON -->
-        <link href="{{ asset('backend/images/favicon.png') }}" rel="shortcut icon" />
+        <link href="{{ asset('public/backend//images/favicon.png') }}" rel="shortcut icon" />
 
         <!--
     HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries
@@ -119,7 +45,7 @@
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
-        <script src="{{ asset('backend/plugins/nprogress/nprogress.js') }}"></script>
+        <script src="{{ asset('public/backend//plugins/nprogress/nprogress.js') }}"></script>
     </head>
 
 </head>
@@ -132,8 +58,8 @@
                     <div class="card card-default mb-0">
                         <div class="card-header pb-0">
                             <div class="app-brand w-100 d-flex justify-content-center border-bottom-0">
-                                <a class="w-auto pl-0" href="/index.html">
-                                    <img src="{{ asset('backend/images/logo.png') }}" alt="Mono">
+                                <a class="w-100 pl-0" href="/index.html">
+                                    <img class="w-100" src="{{ asset('public/backend//images/logo.png') }}" alt="Mono">
                                 </a>
 
                             </div>
@@ -175,7 +101,6 @@
                                                     me</label>
                                             </div>
 
-                                            <a class="text-color" href="#"> Forgot password? </a>
 
                                         </div>
 
